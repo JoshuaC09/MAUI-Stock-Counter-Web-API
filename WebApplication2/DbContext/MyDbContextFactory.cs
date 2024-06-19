@@ -7,7 +7,6 @@ namespace WebApplication2
     {
         public MyDbContext CreateDbContext(string connectionString)
         {
-            Console.WriteLine("Decrypted Connection String: " + connectionString);
             var optionsBuilder = new DbContextOptionsBuilder<MyDbContext>();
             optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21)));
 

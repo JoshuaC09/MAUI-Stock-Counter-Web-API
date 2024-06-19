@@ -2731,11 +2731,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Canapi_Joshua_Intern_PUPSMB\\WORKING API\\BACKEND WORKING API\\MAUI-BACKEND-WORKING-API\\WebApplication2\\WebApplication2.csproj",
+      "projectUniqueName": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "D:\\Canapi_Joshua_Intern_PUPSMB\\WORKING API\\BACKEND WORKING API\\MAUI-BACKEND-WORKING-API\\WebApplication2\\WebApplication2.csproj",
+      "projectPath": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\WebApplication2.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Canapi_Joshua_Intern_PUPSMB\\WORKING API\\BACKEND WORKING API\\MAUI-BACKEND-WORKING-API\\WebApplication2\\obj\\",
+      "outputPath": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
