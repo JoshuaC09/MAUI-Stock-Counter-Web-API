@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\Canapi_Joshua_Intern_PUPSMB\PublishStockCounterAPI</_PublishTargetUrl>
-    <History>True|2024-06-18T04:23:37.6774378Z||;False|2024-06-18T12:17:38.2215689+08:00||;True|2024-06-18T10:01:27.1308804+08:00||;True|2024-06-18T09:51:22.4212556+08:00||;</History>
+    <History>True|2024-06-18T10:08:06.6193796Z||;True|2024-06-18T12:23:37.6774378+08:00||;False|2024-06-18T12:17:38.2215689+08:00||;True|2024-06-18T10:01:27.1308804+08:00||;True|2024-06-18T09:51:22.4212556+08:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

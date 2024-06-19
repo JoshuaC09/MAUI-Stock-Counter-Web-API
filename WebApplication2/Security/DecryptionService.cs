@@ -44,9 +44,9 @@ namespace WebApplication2.Security
                     aes.IV = iv;
                     aes.Padding = PaddingMode.PKCS7;
 
-                    using (var decryptor = aes.CreateDecryptor(aes.Key, aes.IV))
+                    using (var descriptor = aes.CreateDecryptor(aes.Key, aes.IV))
                     using (var ms = new MemoryStream(cipher))
-                    using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read))
+                    using (var cs = new CryptoStream(ms, descriptor, CryptoStreamMode.Read))
                     using (var sr = new StreamReader(cs))
                     {
                         return sr.ReadToEnd();

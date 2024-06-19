@@ -33,19 +33,29 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "WebApplication2.Models.CountSheet",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApplication2.Controllers.CountSheetController",
     "Method": "GetById",
-    "RelativePath": "api/CountSheet/{id}",
+    "RelativePath": "api/CountSheet/{countCode}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "countCode",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -64,14 +74,14 @@
   {
     "ContainingType": "WebApplication2.Controllers.CountSheetController",
     "Method": "Update",
-    "RelativePath": "api/CountSheet/{id}",
+    "RelativePath": "api/CountSheet/{countCode}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "countCode",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -85,14 +95,14 @@
   {
     "ContainingType": "WebApplication2.Controllers.CountSheetController",
     "Method": "Delete",
-    "RelativePath": "api/CountSheet/{id}",
+    "RelativePath": "api/CountSheet/{countCode}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "countCode",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
