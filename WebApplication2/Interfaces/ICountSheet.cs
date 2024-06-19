@@ -1,14 +1,15 @@
-﻿using WebApplication2.Models;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebApplication2.Models;
 
 namespace WebApplication2.Interfaces
 {
-    public interface ICountSheetService
+    public interface ICountSheet
     {
-        IEnumerable<CountSheet> GetAll();
-        CountSheet? GetById(int id);
-        void Add(CountSheet countSheet);
-        void Update(CountSheet countSheet);
-        void Delete(int id);
-        void SaveChanges();
+        Task<IEnumerable<CountSheet>> GetAllAsync();
+        Task<CountSheet?> GetByIdAsync(string countCode);
+        Task AddAsync(CountSheet countSheet);
+        Task UpdateAsync(CountSheet countSheet);
+        Task DeleteAsync(string countCode);
     }
 }

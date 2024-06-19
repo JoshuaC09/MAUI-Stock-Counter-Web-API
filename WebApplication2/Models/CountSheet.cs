@@ -2,8 +2,11 @@
 {
     public class CountSheet
     {
-        public int CountId { get; set; }
         public string CountCode { get; set; } = string.Empty;
-        public string CountName { get; set; } = string.Empty;
+        public string CountDescription { get; set; } = string.Empty;
+        
+        public DateTime CountDate { get; set; }
+        public int CountStatus { get; set; }
+
     }
 }

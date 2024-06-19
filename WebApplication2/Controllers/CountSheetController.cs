@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WebApplication2.Controllers
 {
@@ -8,23 +10,26 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class CountSheetController : ControllerBase
     {
-        private readonly ICountSheetService _countSheetService;
+        private readonly ICountSheet _countSheetService;
 
-        public CountSheetController(ICountSheetService countSheetService)
+        public CountSheetController(ICountSheet countSheetService)
         {
             _countSheetService = countSheetService;
         }
 
+        // GET: api/CountSheet
         [HttpGet]
-        public ActionResult<IEnumerable<CountSheet>> GetAll()
+        public async Task<ActionResult<IEnumerable<CountSheet>>> GetAll()
         {
-            return Ok(_countSheetService.GetAll());
+            var countSheets = await _countSheetService.GetAllAsync().ConfigureAwait(false);
+            return Ok(countSheets);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<CountSheet> GetById(int id)
+        // GET: api/CountSheet/{countCode}
+        [HttpGet("{countCode}")]
+        public async Task<ActionResult<CountSheet>> GetById(string countCode)
         {
-            var countSheet = _countSheetService.GetById(id);
+            var countSheet = await _countSheetService.GetByIdAsync(countCode).ConfigureAwait(false);
             if (countSheet == null)
             {
                 return NotFound();
@@ -32,29 +37,32 @@ namespace WebApplication2.Controllers
             return Ok(countSheet);
         }
 
+        // POST: api/CountSheet
         [HttpPost]
-        public ActionResult Add(CountSheet countSheet)
+        public async Task<ActionResult<CountSheet>> Add([FromBody] CountSheet countSheet)
         {
-            _countSheetService.Add(countSheet);
-            return CreatedAtAction(nameof(GetById), new { id = countSheet.CountId }, countSheet);
+            await _countSheetService.AddAsync(countSheet).ConfigureAwait(false);
+            return CreatedAtAction(nameof(GetById), new { countCode = countSheet.CountCode }, countSheet);
         }
 
-        [HttpPut("{id}")]
-        public ActionResult Update(int id, CountSheet countSheet)
+        // PUT: api/CountSheet/{countCode}
+        [HttpPut("{countCode}")]
+        public async Task<IActionResult> Update(string countCode, [FromBody] CountSheet countSheet)
         {
-            if (id != countSheet.CountId)
+            if (countCode != countSheet.CountCode)
             {
                 return BadRequest();
             }
 
-            _countSheetService.Update(countSheet);
+            await _countSheetService.UpdateAsync(countSheet).ConfigureAwait(false);
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        // DELETE: api/CountSheet/{countCode}
+        [HttpDelete("{countCode}")]
+        public async Task<IActionResult> Delete(string countCode)
         {
-            _countSheetService.Delete(id);
+            await _countSheetService.DeleteAsync(countCode).ConfigureAwait(false);
             return NoContent();
         }
     }

@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication1.DatabaseContext;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
+using WebApplication1.DatabaseContext;
+using WebApplication2.Interfaces;
 
 namespace WebApplication2.Repository
 {
@@ -16,34 +17,36 @@ namespace WebApplication2.Repository
             _dbSet = context.Set<T>();
         }
 
-        public void Add(T entity)
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            _dbSet.Add(entity);
+            return await _dbSet.ToListAsync();
         }
 
-        public void Delete(T entity)
+        public async Task<T?> GetByIdAsync(string id)
         {
-            _dbSet.Remove(entity);
+            return await _dbSet.FindAsync(id);
         }
 
-        public void Update(T entity)
+        public async Task AddAsync(T entity)
+        {
+            await _dbSet.AddAsync(entity);
+        }
+
+        public async Task UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
+            await Task.CompletedTask;
         }
 
-        public T? GetById(int id) // Make the return type nullable
+        public async Task DeleteAsync(T entity)
         {
-            return _dbSet.Find(id); // _dbSet.Find(id) can return null
+            _dbSet.Remove(entity);
+            await Task.CompletedTask;
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task SaveChangesAsync()
         {
-            return _dbSet.ToList();
-        }
-
-        public void SaveChanges()
-        {
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }
