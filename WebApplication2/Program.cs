@@ -8,21 +8,14 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register the IConfiguration instance which MyDbContextFactory depends on
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
-
-// Register MyDbContextFactory
 builder.Services.AddSingleton<MyDbContextFactory>();
-
-// Register ConnectionStringProvider
 builder.Services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
 
-// Register DecryptionService with values from appsettings.json
 var encryptionSettings = builder.Configuration.GetSection("EncryptionSettings");
 var encryptionKey = encryptionSettings.GetValue<string>("Key");
 var saltString = encryptionSettings.GetValue<string>("Salt");
@@ -41,20 +34,21 @@ var salt = Encoding.UTF8.GetBytes(saltString);
 
 builder.Services.AddSingleton(new DecryptionService(encryptionKey, salt));
 
-
-// Register the repository and service with a factory for DbContext
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ICountSheet, CountSheetService>();
-//builder.Services.AddScoped<IItemCount, ItemCountService>();
+builder.Services.AddScoped<IItemCount, ItemCountService>();
 builder.Services.AddScoped<IEmployee, EmployeeService>();
 builder.Services.AddScoped<MyDbContext>(provider =>
 {
     var connectionStringProvider = provider.GetRequiredService<IConnectionStringProvider>();
     var dbContextFactory = provider.GetRequiredService<MyDbContextFactory>();
-    return dbContextFactory.CreateDbContext(connectionStringProvider.GetConnectionString());
+    var connectionStringTask = connectionStringProvider.GetConnectionStringAsync();
+    connectionStringTask.Wait();
+    var connectionString = connectionStringTask.Result;
+
+    return dbContextFactory.CreateDbContext(connectionString);
 });
 
-// Configure CORS to allow any origin, method, and header
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>

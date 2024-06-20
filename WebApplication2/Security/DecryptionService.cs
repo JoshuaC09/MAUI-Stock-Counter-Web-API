@@ -1,7 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WebApplication2.Security
 {
@@ -26,7 +26,7 @@ namespace WebApplication2.Security
             }
         }
 
-        public string Decrypt(string cipherText)
+        public async Task<string> DecryptAsync(string cipherText)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace WebApplication2.Security
                     using (var cs = new CryptoStream(ms, descriptor, CryptoStreamMode.Read))
                     using (var sr = new StreamReader(cs))
                     {
-                        return sr.ReadToEnd();
+                        return await sr.ReadToEndAsync();
                     }
                 }
             }

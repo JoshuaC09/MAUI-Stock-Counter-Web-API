@@ -1,8 +1,10 @@
-﻿namespace WebApplication2.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace WebApplication2.Interfaces
 {
     public interface IConnectionStringProvider
     {
-        void SetConnectionString(string connectionString);
-        string GetConnectionString();
+        Task SetConnectionStringAsync(string connectionString);
+        Task<string> GetConnectionStringAsync();
     }
 }

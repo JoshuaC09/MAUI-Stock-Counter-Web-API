@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Threading.Tasks;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
 using WebApplication2.Security;
-using System.Net;
 
 namespace WebApplication2.Controllers
 {
@@ -20,7 +21,7 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost("SetConnectionString")]
-        public IActionResult SetConnectionString([FromBody] ConnString model)
+        public async Task<IActionResult> SetConnectionStringAsync([FromBody] ConnString model)
         {
             if (string.IsNullOrEmpty(model.ConnectionString))
             {
@@ -28,15 +29,15 @@ namespace WebApplication2.Controllers
             }
             string decodedConnectionString = WebUtility.UrlDecode(model.ConnectionString);
 
-            string decryptedConnectionString = _decryptionService.Decrypt(decodedConnectionString);
-            _connectionStringProvider.SetConnectionString(decryptedConnectionString);
+            string decryptedConnectionString = await _decryptionService.DecryptAsync(decodedConnectionString);
+            await _connectionStringProvider.SetConnectionStringAsync(decryptedConnectionString);
             return Ok("Connection string set successfully.");
         }
 
         [HttpGet("GetConnectionString")]
-        public string GetConnectionString()
+        public async Task<string> GetConnectionStringAsync()
         {
-            return _connectionStringProvider.GetConnectionString();
+            return await _connectionStringProvider.GetConnectionStringAsync();
         }
     }
 }

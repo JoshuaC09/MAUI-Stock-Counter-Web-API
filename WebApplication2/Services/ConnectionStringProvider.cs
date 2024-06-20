@@ -1,4 +1,5 @@
-﻿using WebApplication2.Interfaces;
+﻿using System.Threading.Tasks;
+using WebApplication2.Interfaces;
 
 namespace WebApplication2.Services
 {
@@ -6,13 +7,17 @@ namespace WebApplication2.Services
     {
         private string _connectionString = string.Empty;
 
-        public void SetConnectionString(string connectionString)
+        public async Task SetConnectionStringAsync(string connectionString)
         {
+            // Simulate async work
+            await Task.Yield();
             _connectionString = connectionString;
         }
 
-        public string GetConnectionString()
+        public async Task<string> GetConnectionStringAsync()
         {
+            // Simulate async work
+            await Task.Yield();
             return _connectionString;
         }
     }
