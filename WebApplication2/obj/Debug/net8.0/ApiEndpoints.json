@@ -110,7 +110,7 @@
   },
   {
     "ContainingType": "WebApplication2.Controllers.DatabaseController",
-    "Method": "GetConnectionString",
+    "Method": "GetConnectionStringAsync",
     "RelativePath": "api/Database/GetConnectionString",
     "HttpMethod": "GET",
     "IsController": true,
@@ -130,7 +130,7 @@
   },
   {
     "ContainingType": "WebApplication2.Controllers.DatabaseController",
-    "Method": "SetConnectionString",
+    "Method": "SetConnectionStringAsync",
     "RelativePath": "api/Database/SetConnectionString",
     "HttpMethod": "POST",
     "IsController": true,
@@ -161,6 +161,115 @@
         "Name": "pattern",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.ItemCountController",
+    "Method": "GetAll",
+    "RelativePath": "api/ItemCount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApplication2.Models.ItemCount, WebApplication2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.ItemCountController",
+    "Method": "Add",
+    "RelativePath": "api/ItemCount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemCount",
+        "Type": "WebApplication2.Models.ItemCount",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebApplication2.Models.ItemCount",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.ItemCountController",
+    "Method": "GetById",
+    "RelativePath": "api/ItemCount/{itemCounter}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemCounter",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebApplication2.Models.ItemCount",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.ItemCountController",
+    "Method": "Update",
+    "RelativePath": "api/ItemCount/{itemCounter}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemCounter",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "itemCount",
+        "Type": "WebApplication2.Models.ItemCount",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.ItemCountController",
+    "Method": "Delete",
+    "RelativePath": "api/ItemCount/{itemCounter}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemCounter",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

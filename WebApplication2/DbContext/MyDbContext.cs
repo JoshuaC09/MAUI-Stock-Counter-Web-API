@@ -38,7 +38,7 @@ namespace WebApplication1.DatabaseContext
             modelBuilder.Entity<ItemCount>(entity =>
             {
                 entity.ToTable("item_count");
-                entity.HasKey(e => e.ItemCountCode);
+                entity.HasKey(e => e.ItemCounter);
                 entity.Property(e => e.ItemCounter)
                     .HasColumnName("itm_ctr")
                     .IsRequired();

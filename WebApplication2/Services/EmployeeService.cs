@@ -1,6 +1,4 @@
-﻿
-using System.Data;
-
+﻿using System.Data;
 using MySqlConnector;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
@@ -19,7 +17,7 @@ namespace WebApplication2.Services
         public async Task<IEnumerable<Employee>> GetEmployeesAsync(string databaseName, string pattern)
         {
             var employees = new List<Employee>();
-            string connectionString = _connectionStringProvider.GetConnectionString();
+            string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
 
             using (var connection = new MySqlConnection(connectionString))
             {
