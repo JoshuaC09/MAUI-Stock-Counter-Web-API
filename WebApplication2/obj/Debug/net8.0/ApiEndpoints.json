@@ -130,6 +130,46 @@
   },
   {
     "ContainingType": "WebApplication2.Controllers.DatabaseController",
+    "Method": "GetPatternAsync",
+    "RelativePath": "api/Database/GetPattern",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.DatabaseController",
+    "Method": "GetRemoteDatabaseAsync",
+    "RelativePath": "api/Database/GetRemoteDatabase",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.DatabaseController",
     "Method": "SetConnectionStringAsync",
     "RelativePath": "api/Database/SetConnectionString",
     "HttpMethod": "POST",
