@@ -38,6 +38,9 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ICountSheet, CountSheetService>();
 builder.Services.AddScoped<IItemCount, ItemCountService>();
 builder.Services.AddScoped<IEmployee, EmployeeService>();
+builder.Services.AddScoped<IItem, ItemService>();
+
+
 builder.Services.AddScoped<MyDbContext>(provider =>
 {
     var connectionStringProvider = provider.GetRequiredService<IConnectionStringProvider>();

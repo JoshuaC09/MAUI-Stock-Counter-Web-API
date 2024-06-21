@@ -25,11 +25,11 @@ namespace WebApplication2.Controllers
             return Ok(itemCounts);
         }
 
-        // GET: api/ItemCount/{itemCounter}
-        [HttpGet("{itemCounter}")]
-        public async Task<ActionResult<ItemCount>> GetById(string itemCounter)
+        // GET: api/ItemCount/{itemKey}
+        [HttpGet("{itemKey}")]
+        public async Task<ActionResult<ItemCount>> GetById(string itemKey)
         {
-            var itemCount = await _itemCountService.GetByIdAsync(itemCounter).ConfigureAwait(false);
+            var itemCount = await _itemCountService.GetByIdAsync(itemKey).ConfigureAwait(false);
             if (itemCount == null)
             {
                 return NotFound();
@@ -42,14 +42,14 @@ namespace WebApplication2.Controllers
         public async Task<ActionResult<ItemCount>> Add([FromBody] ItemCount itemCount)
         {
             await _itemCountService.AddAsync(itemCount).ConfigureAwait(false);
-            return CreatedAtAction(nameof(GetById), new { itemCounter = itemCount.ItemCounter.ToString() }, itemCount);
+            return CreatedAtAction(nameof(GetById), new { itemKey = itemCount.ItemKey }, itemCount);
         }
 
-        // PUT: api/ItemCount/{itemCounter}
-        [HttpPut("{itemCounter}")]
-        public async Task<IActionResult> Update(string itemCounter, [FromBody] ItemCount itemCount)
+        // PUT: api/ItemCount/{itemKey}
+        [HttpPut("{itemKey}")]
+        public async Task<IActionResult> Update(string itemKey, [FromBody] ItemCount itemCount)
         {
-            if (itemCounter != itemCount.ItemCounter.ToString())
+            if (itemKey != itemCount.ItemKey)
             {
                 return BadRequest();
             }
@@ -58,11 +58,11 @@ namespace WebApplication2.Controllers
             return NoContent();
         }
 
-        // DELETE: api/ItemCount/{itemCounter}
-        [HttpDelete("{itemCounter}")]
-        public async Task<IActionResult> Delete(string itemCounter)
+        // DELETE: api/ItemCount/{itemKey}
+        [HttpDelete("{itemKey}")]
+        public async Task<IActionResult> Delete(string itemKey)
         {
-            await _itemCountService.DeleteAsync(itemCounter).ConfigureAwait(false);
+            await _itemCountService.DeleteAsync(itemKey).ConfigureAwait(false);
             return NoContent();
         }
     }

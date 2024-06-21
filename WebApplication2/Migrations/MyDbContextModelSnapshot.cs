@@ -39,6 +39,12 @@ namespace WebApplication2.Migrations
                         .HasColumnType("varchar(200)")
                         .HasColumnName("cnt_desc");
 
+                    b.Property<string>("CountSheetEmployee")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)")
+                        .HasColumnName("cnt_emp");
+
                     b.Property<int>("CountStatus")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -52,10 +58,12 @@ namespace WebApplication2.Migrations
 
             modelBuilder.Entity("WebApplication2.Models.ItemCount", b =>
                 {
-                    b.Property<string>("ItemCountCode")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("itm_cntcode");
+                    b.Property<int>("ItemCounter")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("itm_ctr");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ItemCounter"));
 
                     b.Property<string>("ItemBatchLotNumber")
                         .IsRequired()
@@ -69,9 +77,11 @@ namespace WebApplication2.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("itm_code");
 
-                    b.Property<int>("ItemCounter")
-                        .HasColumnType("int")
-                        .HasColumnName("itm_ctr");
+                    b.Property<string>("ItemCountCode")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("itm_cntcode");
 
                     b.Property<DateTime>("ItemDateLog")
                         .HasColumnType("datetime(6)")
@@ -89,6 +99,12 @@ namespace WebApplication2.Migrations
                         .HasColumnType("varchar(20)")
                         .HasColumnName("itm_expiry");
 
+                    b.Property<string>("ItemKey")
+                        .IsRequired()
+                        .HasMaxLength(45)
+                        .HasColumnType("varchar(45)")
+                        .HasColumnName("itm_key");
+
                     b.Property<int>("ItemQuantity")
                         .HasColumnType("int")
                         .HasColumnName("itm_quantity");
@@ -99,7 +115,7 @@ namespace WebApplication2.Migrations
                         .HasColumnType("varchar(20)")
                         .HasColumnName("itm_uom");
 
-                    b.HasKey("ItemCountCode");
+                    b.HasKey("ItemCounter");
 
                     b.ToTable("item_count", (string)null);
                 });
