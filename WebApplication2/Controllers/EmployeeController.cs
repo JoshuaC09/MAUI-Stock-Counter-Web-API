@@ -15,7 +15,7 @@ namespace WebApplication2.Controllers
         }
 
         [HttpGet("GetEmployees")]
-        public async Task<IActionResult> GetEmployees([FromQuery] string databaseName, [FromQuery] string pattern = null)
+        public async Task<IActionResult> GetEmployees([FromQuery] string databaseName, [FromQuery] string pattern = "")
         {
             if (string.IsNullOrEmpty(databaseName))
             {

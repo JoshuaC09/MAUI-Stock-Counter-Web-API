@@ -27,10 +27,15 @@ namespace WebApplication2.Controllers
             {
                 return BadRequest("Connection string is required.");
             }
-            string decodedConnectionString = WebUtility.UrlDecode(model.ConnectionString);
 
+            string decodedConnectionString = WebUtility.UrlDecode(model.ConnectionString);
             string decryptedConnectionString = await _decryptionService.DecryptAsync(decodedConnectionString);
-            await _connectionStringProvider.SetConnectionStringAsync(decryptedConnectionString);
+
+            string[] connectionStringParts = decryptedConnectionString.Split(';');
+            string coreConnectionString = string.Join(";", connectionStringParts.Where(part => !part.StartsWith("RemoteDatabase=")));
+            string remoteDatabase = connectionStringParts.FirstOrDefault(part => part.StartsWith("RemoteDatabase="))?.Split('=')[1];
+
+            await _connectionStringProvider.SetConnectionStringAsync(coreConnectionString, remoteDatabase);
             return Ok("Connection string set successfully.");
         }
 
@@ -38,6 +43,12 @@ namespace WebApplication2.Controllers
         public async Task<string> GetConnectionStringAsync()
         {
             return await _connectionStringProvider.GetConnectionStringAsync();
+        }
+
+        [HttpGet("GetRemoteDatabase")]
+        public async Task<string> GetRemoteDatabaseAsync()
+        {
+            return await _connectionStringProvider.GetRemoteDatabaseAsync();
         }
     }
 }

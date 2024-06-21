@@ -18,6 +18,7 @@ namespace WebApplication2.Services
         {
             var employees = new List<Employee>();
             string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
+            string remoteDatabase = await _connectionStringProvider.GetRemoteDatabaseAsync() ?? databaseName;
 
             using (var connection = new MySqlConnection(connectionString))
             {
@@ -25,7 +26,7 @@ namespace WebApplication2.Services
                 using (var command = new MySqlCommand("getemp", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("rmschma", databaseName);
+                    command.Parameters.AddWithValue("rmschma", remoteDatabase);
                     command.Parameters.AddWithValue("patrn", pattern ?? string.Empty);
 
                     using (var reader = await command.ExecuteReaderAsync())
