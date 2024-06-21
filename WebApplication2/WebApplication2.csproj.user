@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>http</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>D:\Canapi_Joshua_Intern_PUPSMB\WORKING API\BACKEND WORKING API\MAUI-BACKEND-WORKING-API\WebApplication2\Properties\PublishProfiles\FolderProfile8.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\Properties\PublishProfiles\FolderProfile9.pubxml</NameOfLastUsedPublishProfile>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
   </PropertyGroup>

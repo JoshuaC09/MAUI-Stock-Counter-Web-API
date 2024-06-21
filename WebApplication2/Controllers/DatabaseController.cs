@@ -32,11 +32,10 @@ namespace WebApplication2.Controllers
             string decryptedConnectionString = await _decryptionService.DecryptAsync(decodedConnectionString);
 
             string[] connectionStringParts = decryptedConnectionString.Split(';');
-            string coreConnectionString = string.Join(";", connectionStringParts.Where(part => !part.StartsWith("RemoteDatabase=") && !part.StartsWith("Pattern=")));
+            string coreConnectionString = string.Join(";", connectionStringParts.Where(part => !part.StartsWith("RemoteDatabase=")));
             string remoteDatabase = connectionStringParts.FirstOrDefault(part => part.StartsWith("RemoteDatabase="))?.Split('=')[1];
-            string pattern = connectionStringParts.FirstOrDefault(part => part.StartsWith("Pattern="))?.Split('=')[1];
 
-            await _connectionStringProvider.SetConnectionStringAsync(coreConnectionString, remoteDatabase, pattern);
+            await _connectionStringProvider.SetConnectionStringAsync(coreConnectionString, remoteDatabase);
             return Ok("Connection string set successfully.");
         }
 
@@ -50,12 +49,6 @@ namespace WebApplication2.Controllers
         public async Task<string> GetRemoteDatabaseAsync()
         {
             return await _connectionStringProvider.GetRemoteDatabaseAsync();
-        }
-
-        [HttpGet("GetPattern")]
-        public async Task<string> GetPatternAsync()
-        {
-            return await _connectionStringProvider.GetPatternAsync();
         }
     }
 }

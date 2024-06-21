@@ -8,14 +8,12 @@ namespace WebApplication2.Services
     {
         private string _connectionString = string.Empty;
         private string _remoteDatabase = string.Empty;
-        private string _pattern = string.Empty;
 
-        public async Task SetConnectionStringAsync(string connectionString, string remoteDatabase, string pattern)
+        public async Task SetConnectionStringAsync(string connectionString, string remoteDatabase)
         {
             await Task.Yield();
             _connectionString = connectionString;
             _remoteDatabase = remoteDatabase;
-            _pattern = pattern;
         }
 
         public async Task<string> GetConnectionStringAsync()
@@ -28,12 +26,6 @@ namespace WebApplication2.Services
         {
             await Task.Yield();
             return _remoteDatabase;
-        }
-
-        public async Task<string> GetPatternAsync()
-        {
-            await Task.Yield();
-            return _pattern;
         }
     }
 }
