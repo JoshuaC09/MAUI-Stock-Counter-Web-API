@@ -19,34 +19,34 @@ namespace WebApplication2.Repository
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await _dbSet.ToListAsync();
+            return await _dbSet.ToListAsync().ConfigureAwait(false);
         }
 
-        public async Task<T?> GetByIdAsync(object id) 
+        public async Task<T?> GetByIdAsync(object id)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbSet.FindAsync(id).ConfigureAwait(false);
         }
 
         public async Task AddAsync(T entity)
         {
-            await _dbSet.AddAsync(entity);
+            await _dbSet.AddAsync(entity).ConfigureAwait(false);
         }
 
         public async Task UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
-            await Task.CompletedTask;
+            await Task.CompletedTask.ConfigureAwait(false);
         }
 
         public async Task DeleteAsync(T entity)
         {
             _dbSet.Remove(entity);
-            await Task.CompletedTask;
+            await Task.CompletedTask.ConfigureAwait(false);
         }
 
         public async Task SaveChangesAsync()
         {
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync().ConfigureAwait(false);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -6,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebApplication2.Migrations
 {
     /// <inheritdoc />
-    public partial class FixItemCountTable : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,6 +20,8 @@ namespace WebApplication2.Migrations
                 columns: table => new
                 {
                     cnt_code = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    cnt_emp = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     cnt_desc = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -35,9 +38,12 @@ namespace WebApplication2.Migrations
                 name: "item_count",
                 columns: table => new
                 {
+                    itm_ctr = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    itm_key = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     itm_cntcode = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    itm_ctr = table.Column<int>(type: "int", nullable: false),
                     itm_code = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     itm_description = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
@@ -53,7 +59,7 @@ namespace WebApplication2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_item_count", x => x.itm_cntcode);
+                    table.PrimaryKey("PK_item_count", x => x.itm_ctr);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
         }

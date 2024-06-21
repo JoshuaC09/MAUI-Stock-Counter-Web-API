@@ -22,6 +22,10 @@ namespace WebApplication1.DatabaseContext
                     .HasColumnName("cnt_code")
                     .HasMaxLength(50)
                     .IsRequired();
+                entity.Property(e => e.CountSheetEmployee)
+                    .HasColumnName("cnt_emp")
+                    .HasMaxLength(10)
+                    .IsRequired();
                 entity.Property(e => e.CountDescription)
                     .HasColumnName("cnt_desc")
                     .HasMaxLength(200)
@@ -39,6 +43,10 @@ namespace WebApplication1.DatabaseContext
             {
                 entity.ToTable("item_count");
                 entity.HasKey(e => e.ItemCounter);
+                entity.Property(e => e.ItemKey)
+                    .HasColumnName("itm_key")
+                    .HasMaxLength(45)
+                    .IsRequired();
                 entity.Property(e => e.ItemCounter)
                     .HasColumnName("itm_ctr")
                     .IsRequired();

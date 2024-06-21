@@ -15,12 +15,8 @@ namespace WebApplication2.Controllers
         }
 
         [HttpGet("GetEmployees")]
-        public async Task<IActionResult> GetEmployees([FromQuery] string databaseName, [FromQuery] string pattern = "")
+        public async Task<IActionResult> GetEmployees([FromQuery] string? databaseName, [FromQuery] string? pattern)
         {
-            if (string.IsNullOrEmpty(databaseName))
-            {
-                return BadRequest("Database name is required.");
-            }
 
             var employees = await _employeeService.GetEmployeesAsync(databaseName, pattern);
             return Ok(employees);

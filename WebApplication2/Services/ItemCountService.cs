@@ -19,13 +19,9 @@ namespace WebApplication2.Services
             return await _repository.GetAllAsync().ConfigureAwait(false);
         }
 
-        public async Task<ItemCount?> GetByIdAsync(string itemCounter)
+        public async Task<ItemCount?> GetByIdAsync(string itemKey)
         {
-            if (int.TryParse(itemCounter, out int counter))
-            {
-                return await _repository.GetByIdAsync(counter).ConfigureAwait(false);
-            }
-            return null;
+            return await _repository.GetByIdAsync(itemKey).ConfigureAwait(false);
         }
 
         public async Task AddAsync(ItemCount itemCount)
@@ -40,9 +36,9 @@ namespace WebApplication2.Services
             await _repository.SaveChangesAsync().ConfigureAwait(false);
         }
 
-        public async Task DeleteAsync(string itemCounter)
+        public async Task DeleteAsync(string itemKey)
         {
-            var itemCount = await GetByIdAsync(itemCounter).ConfigureAwait(false);
+            var itemCount = await GetByIdAsync(itemKey).ConfigureAwait(false);
             if (itemCount != null)
             {
                 await _repository.DeleteAsync(itemCount).ConfigureAwait(false);

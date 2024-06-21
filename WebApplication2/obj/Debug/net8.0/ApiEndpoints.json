@@ -186,6 +186,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApplication2.Controllers.ItemController",
+    "Method": "GetItemsAsync",
+    "RelativePath": "api/Item/GetItems",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "databaseName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pattern",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApplication2.Controllers.ItemCountController",
     "Method": "GetAll",
     "RelativePath": "api/ItemCount",
@@ -234,13 +255,13 @@
   {
     "ContainingType": "WebApplication2.Controllers.ItemCountController",
     "Method": "GetById",
-    "RelativePath": "api/ItemCount/{itemCounter}",
+    "RelativePath": "api/ItemCount/{itemKey}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "itemCounter",
+        "Name": "itemKey",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -260,13 +281,13 @@
   {
     "ContainingType": "WebApplication2.Controllers.ItemCountController",
     "Method": "Update",
-    "RelativePath": "api/ItemCount/{itemCounter}",
+    "RelativePath": "api/ItemCount/{itemKey}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "itemCounter",
+        "Name": "itemKey",
         "Type": "System.String",
         "IsRequired": true
       },
@@ -281,13 +302,13 @@
   {
     "ContainingType": "WebApplication2.Controllers.ItemCountController",
     "Method": "Delete",
-    "RelativePath": "api/ItemCount/{itemCounter}",
+    "RelativePath": "api/ItemCount/{itemKey}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "itemCounter",
+        "Name": "itemKey",
         "Type": "System.String",
         "IsRequired": true
       }
