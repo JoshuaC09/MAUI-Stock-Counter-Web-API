@@ -1,7 +1,6 @@
 using WebApplication1.DatabaseContext;
 using WebApplication2;
 using WebApplication2.Interfaces;
-using WebApplication2.Repository;
 using WebApplication2.Security;
 using WebApplication2.Services;
 using System.Text;
@@ -34,7 +33,6 @@ var salt = Encoding.UTF8.GetBytes(saltString);
 
 builder.Services.AddSingleton(new DecryptionService(encryptionKey, salt));
 
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ICountSheet, CountSheetService>();
 builder.Services.AddScoped<IItemCount, ItemCountService>();
 builder.Services.AddScoped<IEmployee, EmployeeService>();

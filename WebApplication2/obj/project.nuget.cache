@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "p/xbmbTExUY=",
+  "dgSpecHash": "rQjYKf9HBdU=",
   "success": true,
   "projectFilePath": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\WebApplication2.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
