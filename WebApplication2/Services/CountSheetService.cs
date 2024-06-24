@@ -2,8 +2,6 @@
 using WebApplication2.Models;
 using MySqlConnector;
 using System.Data;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace WebApplication2.Services
 {
@@ -16,7 +14,7 @@ namespace WebApplication2.Services
             _connectionStringProvider = connectionStringProvider;
         }
 
-        public async Task AddCountSheetAsync(string emp, string desc, DateTime date)
+        public async Task AddCountSheetAsync(string employeeCode, string description, DateTime date)
         {
             string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
             using (var connection = new MySqlConnection(connectionString))
@@ -25,8 +23,8 @@ namespace WebApplication2.Services
                 using (var command = new MySqlCommand("add_count_sheet", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("_emp", emp);
-                    command.Parameters.AddWithValue("_desc", desc);
+                    command.Parameters.AddWithValue("_emp", employeeCode);
+                    command.Parameters.AddWithValue("_desc", description);
                     command.Parameters.AddWithValue("_date", date);
                     await command.ExecuteNonQueryAsync();
                 }
@@ -48,7 +46,7 @@ namespace WebApplication2.Services
             }
         }
 
-        public async Task EditCountSheetAsync(string countCode, string desc)
+        public async Task EditCountSheetAsync(string countCode, string desccription)
         {
             string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
             using (var connection = new MySqlConnection(connectionString))
@@ -58,13 +56,13 @@ namespace WebApplication2.Services
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("_cntcode", countCode);
-                    command.Parameters.AddWithValue("_desc", desc);
+                    command.Parameters.AddWithValue("_desc", desccription);
                     await command.ExecuteNonQueryAsync();
                 }
             }
         }
 
-        public async Task<IEnumerable<CountSheet>> ShowCountSheetAsync(string emp)
+        public async Task<IEnumerable<CountSheet>> ShowCountSheetAsync(string employeeCode)
         {
             List<CountSheet> countSheets = new List<CountSheet>();
             string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
@@ -74,7 +72,7 @@ namespace WebApplication2.Services
                 using (var command = new MySqlCommand("show_count_sheet", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("_emp", emp);
+                    command.Parameters.AddWithValue("_emp", employeeCode);
                     using (var reader = await command.ExecuteReaderAsync())
                     {
                         while (await reader.ReadAsync())
@@ -83,7 +81,7 @@ namespace WebApplication2.Services
                             {
                                 CountCode = reader.GetString("cnt_code"),
                                 CountDescription = reader.GetString("cnt_desc"),
-                                CountSheetEmployee = emp
+                                CountSheetEmployee = employeeCode
                             });
                         }
                     }
