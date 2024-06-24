@@ -1,28 +1,8 @@
 [
   {
     "ContainingType": "WebApplication2.Controllers.CountSheetController",
-    "Method": "GetAll",
-    "RelativePath": "api/CountSheet",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApplication2.Models.CountSheet, WebApplication2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApplication2.Controllers.CountSheetController",
-    "Method": "Add",
-    "RelativePath": "api/CountSheet",
+    "Method": "AddCountSheet",
+    "RelativePath": "api/CountSheet/add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -33,69 +13,12 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "WebApplication2.Models.CountSheet",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApplication2.Controllers.CountSheetController",
-    "Method": "GetById",
-    "RelativePath": "api/CountSheet/{countCode}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "countCode",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "WebApplication2.Models.CountSheet",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApplication2.Controllers.CountSheetController",
-    "Method": "Update",
-    "RelativePath": "api/CountSheet/{countCode}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "countCode",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "countSheet",
-        "Type": "WebApplication2.Models.CountSheet",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "WebApplication2.Controllers.CountSheetController",
-    "Method": "Delete",
-    "RelativePath": "api/CountSheet/{countCode}",
+    "Method": "DeleteCountSheet",
+    "RelativePath": "api/CountSheet/delete/{countCode}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -107,6 +30,48 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.CountSheetController",
+    "Method": "EditCountSheet",
+    "RelativePath": "api/CountSheet/edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "countSheet",
+        "Type": "WebApplication2.Models.CountSheet",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.CountSheetController",
+    "Method": "ShowCountSheet",
+    "RelativePath": "api/CountSheet/show/{emp}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "emp",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApplication2.Models.CountSheet, WebApplication2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApplication2.Controllers.DatabaseController",
@@ -208,28 +173,8 @@
   },
   {
     "ContainingType": "WebApplication2.Controllers.ItemCountController",
-    "Method": "GetAll",
-    "RelativePath": "api/ItemCount",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApplication2.Models.ItemCount, WebApplication2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApplication2.Controllers.ItemCountController",
-    "Method": "Add",
-    "RelativePath": "api/ItemCount",
+    "Method": "AddItemCount",
+    "RelativePath": "api/ItemCount/add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -240,69 +185,12 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "WebApplication2.Models.ItemCount",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApplication2.Controllers.ItemCountController",
-    "Method": "GetById",
-    "RelativePath": "api/ItemCount/{itemKey}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "itemKey",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "WebApplication2.Models.ItemCount",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApplication2.Controllers.ItemCountController",
-    "Method": "Update",
-    "RelativePath": "api/ItemCount/{itemKey}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "itemKey",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "itemCount",
-        "Type": "WebApplication2.Models.ItemCount",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "WebApplication2.Controllers.ItemCountController",
-    "Method": "Delete",
-    "RelativePath": "api/ItemCount/{itemKey}",
+    "Method": "DeleteItemCount",
+    "RelativePath": "api/ItemCount/delete/{itemKey}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -314,5 +202,47 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.ItemCountController",
+    "Method": "EditItemCount",
+    "RelativePath": "api/ItemCount/edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemCount",
+        "Type": "WebApplication2.Models.ItemCount",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.ItemCountController",
+    "Method": "ShowItemCount",
+    "RelativePath": "api/ItemCount/show/{countCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "countCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApplication2.Models.ItemCount, WebApplication2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

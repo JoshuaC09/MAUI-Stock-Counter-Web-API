@@ -1335,3 +1335,4 @@ D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Coun
 D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\obj\Debug\net8.0\WebApplication2.pdb
 D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\obj\Debug\net8.0\WebApplication2.genruntimeconfig.cache
 D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\obj\Debug\net8.0\ref\WebApplication2.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\Dapper.dll

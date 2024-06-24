@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
 
@@ -17,53 +17,31 @@ namespace WebApplication2.Controllers
             _itemCountService = itemCountService;
         }
 
-        // GET: api/ItemCount
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ItemCount>>> GetAll()
+        [HttpPost("add")]
+        public async Task<IActionResult> AddItemCount(ItemCount itemCount)
         {
-            var itemCounts = await _itemCountService.GetAllAsync().ConfigureAwait(false);
-            return Ok(itemCounts);
+            await _itemCountService.AddItemCountAsync(itemCount);
+            return Ok();
         }
 
-        // GET: api/ItemCount/{itemKey}
-        [HttpGet("{itemKey}")]
-        public async Task<ActionResult<ItemCount>> GetById(string itemKey)
+        [HttpDelete("delete/{itemKey}")]
+        public async Task<IActionResult> DeleteItemCount(string itemKey)
         {
-            var itemCount = await _itemCountService.GetByIdAsync(itemKey).ConfigureAwait(false);
-            if (itemCount == null)
-            {
-                return NotFound();
-            }
-            return Ok(itemCount);
+            await _itemCountService.DeleteItemCountAsync(itemKey);
+            return Ok();
         }
 
-        // POST: api/ItemCount
-        [HttpPost]
-        public async Task<ActionResult<ItemCount>> Add([FromBody] ItemCount itemCount)
+        [HttpPut("edit")]
+        public async Task<IActionResult> EditItemCount(ItemCount itemCount)
         {
-            await _itemCountService.AddAsync(itemCount).ConfigureAwait(false);
-            return CreatedAtAction(nameof(GetById), new { itemKey = itemCount.ItemKey }, itemCount);
+            await _itemCountService.EditItemCountAsync(itemCount);
+            return Ok();
         }
 
-        // PUT: api/ItemCount/{itemKey}
-        [HttpPut("{itemKey}")]
-        public async Task<IActionResult> Update(string itemKey, [FromBody] ItemCount itemCount)
+        [HttpGet("show/{countCode}")]
+        public async Task<IEnumerable<ItemCount>> ShowItemCount(string countCode)
         {
-            if (itemKey != itemCount.ItemKey)
-            {
-                return BadRequest();
-            }
-
-            await _itemCountService.UpdateAsync(itemCount).ConfigureAwait(false);
-            return NoContent();
-        }
-
-        // DELETE: api/ItemCount/{itemKey}
-        [HttpDelete("{itemKey}")]
-        public async Task<IActionResult> Delete(string itemKey)
-        {
-            await _itemCountService.DeleteAsync(itemKey).ConfigureAwait(false);
-            return NoContent();
+            return await _itemCountService.ShowItemCountAsync(countCode);
         }
     }
 }
