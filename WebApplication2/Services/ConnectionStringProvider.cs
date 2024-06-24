@@ -1,4 +1,5 @@
-﻿using WebApplication2.Interfaces;
+﻿using System.Threading.Tasks;
+using WebApplication2.Interfaces;
 
 namespace WebApplication2.Services
 {
@@ -7,23 +8,21 @@ namespace WebApplication2.Services
         private string _connectionString = string.Empty;
         private string _remoteDatabase = string.Empty;
 
-        public async Task SetConnectionStringAsync(string connectionString, string remoteDatabase)
+        public Task SetConnectionStringAsync(string connectionString, string remoteDatabase)
         {
-            await Task.Yield();
             _connectionString = connectionString;
             _remoteDatabase = remoteDatabase;
+            return Task.CompletedTask;
         }
 
-        public async Task<string> GetConnectionStringAsync()
+        public Task<string> GetConnectionStringAsync()
         {
-            await Task.Yield();
-            return _connectionString;
+            return Task.FromResult(_connectionString);
         }
 
-        public async Task<string> GetRemoteDatabaseAsync()
+        public Task<string> GetRemoteDatabaseAsync()
         {
-            await Task.Yield();
-            return _remoteDatabase;
+            return Task.FromResult(_remoteDatabase);
         }
     }
 }

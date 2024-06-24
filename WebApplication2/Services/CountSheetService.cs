@@ -1,7 +1,10 @@
-﻿using WebApplication2.Interfaces;
-using WebApplication2.Models;
-using MySqlConnector;
+﻿using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
+using MySqlConnector;
+using WebApplication2.Helpers;
+using WebApplication2.Interfaces;
+using WebApplication2.Models;
 
 namespace WebApplication2.Services
 {
@@ -16,75 +19,46 @@ namespace WebApplication2.Services
 
         public async Task AddCountSheetAsync(string employeeCode, string description, DateTime date)
         {
-            string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
-            using (var connection = new MySqlConnection(connectionString))
+            using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
+            using (var command = DatabaseHelper.CreateCommand(connection, "add_count_sheet", ("_emp", employeeCode), ("_desc", description), ("_date", date)))
             {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("add_count_sheet", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("_emp", employeeCode);
-                    command.Parameters.AddWithValue("_desc", description);
-                    command.Parameters.AddWithValue("_date", date);
-                    await command.ExecuteNonQueryAsync();
-                }
+                await command.ExecuteNonQueryAsync();
             }
         }
 
         public async Task DeleteCountSheetAsync(string countCode)
         {
-            string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
-            using (var connection = new MySqlConnection(connectionString))
+            using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
+            using (var command = DatabaseHelper.CreateCommand(connection, "del_count_sheet", ("_cntcode", countCode)))
             {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("del_count_sheet", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("_cntcode", countCode);
-                    await command.ExecuteNonQueryAsync();
-                }
+                await command.ExecuteNonQueryAsync();
             }
         }
 
-        public async Task EditCountSheetAsync(string countCode, string desccription)
+        public async Task EditCountSheetAsync(string countCode, string description)
         {
-            string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
-            using (var connection = new MySqlConnection(connectionString))
+            using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
+            using (var command = DatabaseHelper.CreateCommand(connection, "edit_count_sheet", ("_cntcode", countCode), ("_desc", description)))
             {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("edit_count_sheet", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("_cntcode", countCode);
-                    command.Parameters.AddWithValue("_desc", desccription);
-                    await command.ExecuteNonQueryAsync();
-                }
+                await command.ExecuteNonQueryAsync();
             }
         }
 
         public async Task<IEnumerable<CountSheet>> ShowCountSheetAsync(string employeeCode)
         {
-            List<CountSheet> countSheets = new List<CountSheet>();
-            string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
-            using (var connection = new MySqlConnection(connectionString))
+            var countSheets = new List<CountSheet>();
+            using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
+            using (var command = DatabaseHelper.CreateCommand(connection, "show_count_sheet", ("_emp", employeeCode)))
+            using (var reader = await command.ExecuteReaderAsync())
             {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("show_count_sheet", connection))
+                while (await reader.ReadAsync())
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("_emp", employeeCode);
-                    using (var reader = await command.ExecuteReaderAsync())
+                    countSheets.Add(new CountSheet
                     {
-                        while (await reader.ReadAsync())
-                        {
-                            countSheets.Add(new CountSheet
-                            {
-                                CountCode = reader.GetString("cnt_code"),
-                                CountDescription = reader.GetString("cnt_desc"),
-                                CountSheetEmployee = employeeCode
-                            });
-                        }
-                    }
+                        CountCode = reader.GetString("cnt_code"),
+                        CountDescription = reader.GetString("cnt_desc"),
+                        CountSheetEmployee = employeeCode
+                    });
                 }
             }
             return countSheets;

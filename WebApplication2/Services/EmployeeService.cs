@@ -1,5 +1,8 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Threading.Tasks;
 using MySqlConnector;
+using WebApplication2.Helpers;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
 
@@ -17,33 +20,21 @@ namespace WebApplication2.Services
         public async Task<IEnumerable<Employee>> GetEmployeesAsync(string databaseName, string pattern)
         {
             var employees = new List<Employee>();
-            string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
             string remoteDatabase = await _connectionStringProvider.GetRemoteDatabaseAsync() ?? databaseName;
 
-            using (var connection = new MySqlConnection(connectionString))
+            using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
+            using (var command = DatabaseHelper.CreateCommand(connection, "getemp", ("rmschma", remoteDatabase), ("patrn", pattern ?? string.Empty)))
+            using (var reader = await command.ExecuteReaderAsync())
             {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("getemp", connection))
+                while (await reader.ReadAsync())
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("rmschma", remoteDatabase);
-                    command.Parameters.AddWithValue("patrn", pattern ?? string.Empty);
-
-                    using (var reader = await command.ExecuteReaderAsync())
+                    employees.Add(new Employee
                     {
-                        while (await reader.ReadAsync())
-                        {
-                            var employee = new Employee
-                            {
-                                EmployeeId = reader.GetString("emp_id"),
-                                EmployeeName = reader.GetString("emp_cname")
-                            };
-                            employees.Add(employee);
-                        }
-                    }
+                        EmployeeId = reader.GetString("emp_id"),
+                        EmployeeName = reader.GetString("emp_cname")
+                    });
                 }
             }
-
             return employees;
         }
     }

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Threading.Tasks;
 using MySqlConnector;
+using WebApplication2.Helpers;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
 
@@ -19,34 +20,22 @@ namespace WebApplication2.Services
         public async Task<IEnumerable<Item>> GetItemsAsync(string databaseName, string? pattern)
         {
             var items = new List<Item>();
-            string connectionString = await _connectionStringProvider.GetConnectionStringAsync();
             string remoteDatabase = await _connectionStringProvider.GetRemoteDatabaseAsync() ?? databaseName;
 
-            using (var connection = new MySqlConnection(connectionString))
+            using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
+            using (var command = DatabaseHelper.CreateCommand(connection, "getinv", ("rmschma", remoteDatabase), ("patrn", pattern ?? string.Empty)))
+            using (var reader = await command.ExecuteReaderAsync())
             {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("getinv", connection))
+                while (await reader.ReadAsync())
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("rmschma", remoteDatabase);
-                    command.Parameters.AddWithValue("patrn", pattern ?? string.Empty);
-
-                    using (var reader = await command.ExecuteReaderAsync())
+                    items.Add(new Item
                     {
-                        while (await reader.ReadAsync())
-                        {
-                            var item = new Item
-                            {
-                                ItemNumber = reader.GetString("itemno"),
-                                ItemDescription = reader.GetString("itemdesc"),
-                                SellingUom = reader.GetString("suom")
-                            };
-                            items.Add(item);
-                        }
-                    }
+                        ItemNumber = reader.GetString("itemno"),
+                        ItemDescription = reader.GetString("itemdesc"),
+                        SellingUom = reader.GetString("suom")
+                    });
                 }
             }
-
             return items;
         }
     }
