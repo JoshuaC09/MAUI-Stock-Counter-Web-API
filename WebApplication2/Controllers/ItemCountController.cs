@@ -18,7 +18,7 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddItemCount(ItemCount itemCount)
+        public async Task<IActionResult> AddItemCount([FromBody] ItemCount itemCount)
         {
             await _itemCountService.AddItemCountAsync(itemCount);
             return Ok();
@@ -32,7 +32,7 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPut("edit")]
-        public async Task<IActionResult> EditItemCount(ItemCount itemCount)
+        public async Task<IActionResult> EditItemCount([FromBody] ItemCount itemCount)
         {
             await _itemCountService.EditItemCountAsync(itemCount);
             return Ok();

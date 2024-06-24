@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using System.Threading.Tasks;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
 using WebApplication2.Security;
@@ -31,9 +30,24 @@ namespace WebApplication2.Controllers
             string decodedConnectionString = WebUtility.UrlDecode(model.ConnectionString);
             string decryptedConnectionString = await _decryptionService.DecryptAsync(decodedConnectionString);
 
-            string[] connectionStringParts = decryptedConnectionString.Split(';');
-            string coreConnectionString = string.Join(";", connectionStringParts.Where(part => !part.StartsWith("RemoteDatabase=")));
-            string remoteDatabase = connectionStringParts.FirstOrDefault(part => part.StartsWith("RemoteDatabase="))?.Split('=')[1];
+            string coreConnectionString = string.Empty;
+            string remoteDatabase = string.Empty;
+
+            foreach (var part in decryptedConnectionString.Split(';'))
+            {
+                if (part.StartsWith("RemoteDatabase="))
+                {
+                    remoteDatabase = part.Substring("RemoteDatabase=".Length);
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(coreConnectionString))
+                    {
+                        coreConnectionString += ";";
+                    }
+                    coreConnectionString += part;
+                }
+            }
 
             await _connectionStringProvider.SetConnectionStringAsync(coreConnectionString, remoteDatabase);
             return Ok("Connection string set successfully.");
