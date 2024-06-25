@@ -4,12 +4,41 @@ using WebApplication2.Interfaces;
 using WebApplication2.Security;
 using WebApplication2.Services;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+// Configure Swagger to use JWT authentication
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter JWT with Bearer into field",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSingleton<MyDbContextFactory>();
@@ -38,7 +67,6 @@ builder.Services.AddScoped<IItemCount, ItemCountService>();
 builder.Services.AddScoped<IEmployee, EmployeeService>();
 builder.Services.AddScoped<IItem, ItemService>();
 
-
 builder.Services.AddScoped<MyDbContext>(provider =>
 {
     var connectionStringProvider = provider.GetRequiredService<IConnectionStringProvider>();
@@ -48,6 +76,36 @@ builder.Services.AddScoped<MyDbContext>(provider =>
     var connectionString = connectionStringTask.Result;
 
     return dbContextFactory.CreateDbContext(connectionString);
+});
+
+// Add JWT authentication configuration
+var jwtKey = builder.Configuration["Jwt:Key"];
+if (string.IsNullOrEmpty(jwtKey))
+{
+    throw new ArgumentNullException(nameof(jwtKey), "JWT key must not be null.");
+}
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+    };
+});
+
+// Add authorization policy
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ApiUser", policy => policy.RequireAuthenticatedUser());
 });
 
 builder.Services.AddCors(options =>
@@ -61,6 +119,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
 app.UseCors("AllowAll");
 
 if (app.Environment.IsDevelopment())
@@ -69,8 +128,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication(); // Ensure this is before UseAuthorization
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();
-
-

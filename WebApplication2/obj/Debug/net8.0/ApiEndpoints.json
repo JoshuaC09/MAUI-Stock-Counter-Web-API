@@ -244,5 +244,15 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.TokenController",
+    "Method": "GenerateToken",
+    "RelativePath": "api/Token/generate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
