@@ -1335,3 +1335,11 @@ D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Coun
 D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\obj\Debug\net8.0\WebApplication2.pdb
 D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\obj\Debug\net8.0\WebApplication2.genruntimeconfig.cache
 D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\obj\Debug\net8.0\ref\WebApplication2.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Canapi_Joshua_Intern_PUPSMB\MAUI Stock Counter Web API Github\MAUI-Stock-Counter-Web-API\WebApplication2\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

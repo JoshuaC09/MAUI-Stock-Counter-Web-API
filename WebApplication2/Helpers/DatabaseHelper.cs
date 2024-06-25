@@ -12,7 +12,7 @@ namespace WebApplication2.Helpers
             var connection = new MySqlConnection(connectionString);
             await connection.OpenAsync();
             return connection;
-        }
+        }   
 
         public static MySqlCommand CreateCommand(MySqlConnection connection, string storedProcedure, params (string, object)[] parameters)
         {
