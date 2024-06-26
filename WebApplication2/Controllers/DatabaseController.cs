@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Net;
+using System.Threading.Tasks;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
-using WebApplication2.Security;
 
 namespace WebApplication2.Controllers
 {
@@ -13,12 +14,14 @@ namespace WebApplication2.Controllers
     public class DatabaseController : ControllerBase
     {
         private readonly IConnectionStringProvider _connectionStringProvider;
-        private readonly DecryptionService _decryptionService;
+        private readonly ISecurity _securityService;
+        private readonly ILogger<DatabaseController> _logger;
 
-        public DatabaseController(IConnectionStringProvider connectionStringProvider, DecryptionService decryptionService)
+        public DatabaseController(IConnectionStringProvider connectionStringProvider, ISecurity securityService, ILogger<DatabaseController> logger)
         {
             _connectionStringProvider = connectionStringProvider;
-            _decryptionService = decryptionService;
+            _securityService = securityService;
+            _logger = logger;
         }
 
         [HttpPost("SetConnectionString")]
@@ -30,14 +33,27 @@ namespace WebApplication2.Controllers
             }
 
             string decodedConnectionString = WebUtility.UrlDecode(model.ConnectionString);
-            string decryptedConnectionString = await _decryptionService.DecryptAsync(decodedConnectionString);
+            _logger.LogInformation($"Decoded connection string: {decodedConnectionString}");
+
+            string decryptedConnectionString;
+            try
+            {
+                decryptedConnectionString = await _securityService.DecryptAsync(decodedConnectionString);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error decrypting connection string.");
+                return BadRequest("Invalid connection string.");
+            }
+
+            _logger.LogInformation($"Decrypted connection string: {decryptedConnectionString}");
 
             string coreConnectionString = string.Empty;
             string remoteDatabase = string.Empty;
 
             foreach (var part in decryptedConnectionString.Split(';'))
             {
-                if (part.StartsWith("RemoteDatabase="))
+                if (part.StartsWith("RemoteDatabase=", StringComparison.OrdinalIgnoreCase))
                 {
                     remoteDatabase = part.Substring("RemoteDatabase=".Length);
                 }
@@ -50,6 +66,9 @@ namespace WebApplication2.Controllers
                     coreConnectionString += part;
                 }
             }
+
+            _logger.LogInformation($"Core connection string: {coreConnectionString}");
+            _logger.LogInformation($"Remote database: {remoteDatabase}");
 
             await _connectionStringProvider.SetConnectionStringAsync(coreConnectionString, remoteDatabase);
             return Ok("Connection string set successfully.");

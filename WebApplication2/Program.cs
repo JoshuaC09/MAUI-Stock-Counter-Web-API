@@ -59,8 +59,7 @@ if (saltString == null)
 }
 
 var salt = Encoding.UTF8.GetBytes(saltString);
-
-builder.Services.AddSingleton(new DecryptionService(encryptionKey, salt));
+builder.Services.AddSingleton<ISecurity>(new SecurityService(encryptionKey, salt));
 
 builder.Services.AddScoped<ICountSheet, CountSheetService>();
 builder.Services.AddScoped<IItemCount, ItemCountService>();
