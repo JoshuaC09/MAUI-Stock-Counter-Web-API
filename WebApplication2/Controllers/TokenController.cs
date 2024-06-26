@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using WebApplication2.Interfaces;
 
 namespace WebApplication2.Controllers
 {
@@ -11,30 +8,19 @@ namespace WebApplication2.Controllers
     public class TokenController : ControllerBase
     {
         private readonly IConfiguration _configuration;
+        private readonly ISecurity _securityService;
 
-        public TokenController(IConfiguration configuration)
+        public TokenController(IConfiguration configuration, ISecurity securityService)
         {
             _configuration = configuration;
+            _securityService = securityService;
         }
 
         [HttpPost("generate")]
         public IActionResult GenerateToken()
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new Claim(ClaimTypes.Name, "Stock_Counter")
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(30),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            var tokenString = tokenHandler.WriteToken(token);
+            var key = _configuration["Jwt:Key"];
+            var tokenString = _securityService.GenerateWebToken(key, "Stock_Counter");
 
             return Ok(new { Token = tokenString });
         }

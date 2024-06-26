@@ -1,20 +1,25 @@
-﻿using System.IO;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using WebApplication2.Interfaces;
+using System;
 
 namespace WebApplication2.Security
 {
-    public class DecryptionService
+    public class SecurityService : ISecurity
     {
         private readonly byte[] _key;
 
-        public DecryptionService(string ConnString, byte[] salt)
+        public SecurityService(string ConnString, byte[] salt)
         {
             _key = DeriveKeyFromPassword(ConnString, salt);
         }
 
-        private byte[] DeriveKeyFromPassword(string ConnString, byte[] salt)
+        public byte[] DeriveKeyFromPassword(string ConnString, byte[] salt)
         {
             var iterations = 1000;
             var desiredKeyLength = 32; // 256 bits
@@ -58,6 +63,25 @@ namespace WebApplication2.Security
                 Console.WriteLine("Decryption failed: " + ex.Message);
                 throw;
             }
+        }
+
+        public string GenerateWebToken(string key, string userName, int expireMinutes = 30)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var keyBytes = Encoding.ASCII.GetBytes(key);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, userName)
+                }),
+                Expires = DateTime.UtcNow.AddMinutes(expireMinutes),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(keyBytes), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }
