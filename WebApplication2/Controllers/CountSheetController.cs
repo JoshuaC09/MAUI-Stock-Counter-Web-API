@@ -39,11 +39,11 @@ namespace WebApplication2.Controllers
             return Ok();
         }
 
-        [HttpGet("show/{emp}")]
-        public async Task<ActionResult<IEnumerable<CountSheet>>> ShowCountSheet(string emp)
+        [HttpGet("show")]
+        public async Task<ActionResult<IEnumerable<CountSheet>>> ShowCountSheet(string employeeId)
         {
-            var countSheets = await _countSheetService.ShowCountSheetAsync(emp);
+            var countSheets = await _countSheetService.ShowCountSheetAsync(employeeId);
             return Ok(countSheets);
-        }
+        }   
     }
 }

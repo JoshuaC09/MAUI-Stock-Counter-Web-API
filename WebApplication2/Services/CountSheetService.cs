@@ -53,6 +53,7 @@ namespace WebApplication2.Services
                     {
                         CountCode = reader.GetString("cnt_code"),
                         CountDescription = reader.GetString("cnt_desc"),
+                        CountDate = reader.GetDateTime("cnt_date"),
                         CountSheetEmployee = employeeCode
                     });
                 }
