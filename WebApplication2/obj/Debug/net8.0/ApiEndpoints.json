@@ -50,15 +50,15 @@
   {
     "ContainingType": "WebApplication2.Controllers.CountSheetController",
     "Method": "ShowCountSheet",
-    "RelativePath": "api/CountSheet/show/{emp}",
+    "RelativePath": "api/CountSheet/show",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "emp",
+        "Name": "employeeId",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
