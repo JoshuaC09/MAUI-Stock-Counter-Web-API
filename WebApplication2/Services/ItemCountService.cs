@@ -13,17 +13,24 @@ namespace WebApplication2.Services
             _connectionStringProvider = connectionStringProvider;
         }
 
-        public async Task AddItemCountAsync(ItemCount itemCount)
+        public async Task AddItemCountAsync(
+            string itemCountCode,
+            string itemCode,
+            string itemDescription,
+            string itemUom,
+            string itemBatchLotNumber,
+            string itemExpiry,
+            int itemQuantity)
         {
             using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
             using (var command = DatabaseHelper.CreateCommand(connection, "add_item_count",
-                ("_cntcode", itemCount.ItemCountCode),
-                ("_itmcode", itemCount.ItemCode),
-                ("_itmdesc", itemCount.ItemDescription),
-                ("_itmuom", itemCount.ItemUom),
-                ("_itmbnl", itemCount.ItemBatchLotNumber),
-                ("_itmexp", itemCount.ItemExpiry),
-                ("_itmqty", itemCount.ItemQuantity)))
+                ("_cntcode", itemCountCode),
+                ("_itmcode", itemCode),
+                ("_itmdesc", itemDescription),
+                ("_itmuom", itemUom),
+                ("_itmbnl", itemBatchLotNumber),
+                ("_itmexp", itemExpiry),
+                ("_itmqty", itemQuantity)))
             {
                 await command.ExecuteNonQueryAsync();
             }

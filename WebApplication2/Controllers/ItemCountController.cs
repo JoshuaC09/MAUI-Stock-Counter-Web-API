@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
@@ -22,7 +20,14 @@ namespace WebApplication2.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> AddItemCount([FromBody] ItemCount itemCount)
         {
-            await _itemCountService.AddItemCountAsync(itemCount);
+            await _itemCountService.AddItemCountAsync(
+                itemCount.ItemCountCode,
+                itemCount.ItemCode,
+                itemCount.ItemDescription,
+                itemCount.ItemUom,
+                itemCount.ItemBatchLotNumber,
+                itemCount.ItemExpiry,
+                itemCount.ItemQuantity);
             return Ok();
         }
 
