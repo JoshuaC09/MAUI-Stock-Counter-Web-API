@@ -31,7 +31,7 @@ namespace WebApplication2.Controllers
             return Ok();
         }
 
-        [HttpDelete("delete/{itemKey}")]
+        [HttpDelete("delete")]
         public async Task<IActionResult> DeleteItemCount(string itemKey)
         {
             await _itemCountService.DeleteItemCountAsync(itemKey);
@@ -45,7 +45,7 @@ namespace WebApplication2.Controllers
             return Ok();
         }
 
-        [HttpGet("show/{countCode}")]
+        [HttpGet("show")]
         public async Task<IEnumerable<ItemCount>> ShowItemCount(string countCode)
         {
             return await _itemCountService.ShowItemCountAsync(countCode);

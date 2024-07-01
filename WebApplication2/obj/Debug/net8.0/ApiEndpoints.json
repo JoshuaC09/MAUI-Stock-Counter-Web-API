@@ -190,7 +190,7 @@
   {
     "ContainingType": "WebApplication2.Controllers.ItemCountController",
     "Method": "DeleteItemCount",
-    "RelativePath": "api/ItemCount/delete/{itemKey}",
+    "RelativePath": "api/ItemCount/delete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -198,7 +198,7 @@
       {
         "Name": "itemKey",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -222,7 +222,7 @@
   {
     "ContainingType": "WebApplication2.Controllers.ItemCountController",
     "Method": "ShowItemCount",
-    "RelativePath": "api/ItemCount/show/{countCode}",
+    "RelativePath": "api/ItemCount/show",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -230,7 +230,7 @@
       {
         "Name": "countCode",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
