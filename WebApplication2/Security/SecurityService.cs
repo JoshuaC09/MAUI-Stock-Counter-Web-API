@@ -65,7 +65,7 @@ namespace WebApplication2.Security
             }
         }
 
-        public string GenerateWebToken(string key, string userName, int expireMinutes = 30)
+        public string GenerateWebToken(string key, string userName, int expireMinutes = 300)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var keyBytes = Encoding.ASCII.GetBytes(key);

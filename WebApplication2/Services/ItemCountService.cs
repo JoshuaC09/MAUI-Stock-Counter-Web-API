@@ -14,23 +14,23 @@ namespace WebApplication2.Services
         }
 
         public async Task AddItemCountAsync(
-            string itemCountCode,
-            string itemCode,
-            string itemDescription,
-            string itemUom,
-            string itemBatchLotNumber,
-            string itemExpiry,
-            int itemQuantity)
+            string? itemCountCode,
+            string? itemCode,
+            string? itemDescription,
+            string? itemUom,
+            string? itemBatchLotNumber,
+            string? itemExpiry,
+            int? itemQuantity)
         {
             using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
             using (var command = DatabaseHelper.CreateCommand(connection, "add_item_count",
-                ("_cntcode", itemCountCode),
-                ("_itmcode", itemCode),
-                ("_itmdesc", itemDescription),
-                ("_itmuom", itemUom),
-                ("_itmbnl", itemBatchLotNumber),
-                ("_itmexp", itemExpiry),
-                ("_itmqty", itemQuantity)))
+                ("_cntcode", itemCountCode ?? ""),
+                ("_itmcode", itemCode ?? ""),
+                ("_itmdesc", itemDescription ?? ""),
+                ("_itmuom", itemUom ?? ""),
+                ("_itmbnl", itemBatchLotNumber ?? ""),
+                ("_itmexp", itemExpiry ?? ""),
+                ("_itmqty", itemQuantity ?? 0)))
             {
                 await command.ExecuteNonQueryAsync();
             }
@@ -38,6 +38,7 @@ namespace WebApplication2.Services
 
         public async Task DeleteItemCountAsync(string itemKey)
         {
+            // This method signature doesn't need to change
             using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
             using (var command = DatabaseHelper.CreateCommand(connection, "del_item_count", ("_itmkey", itemKey)))
             {
@@ -45,25 +46,26 @@ namespace WebApplication2.Services
             }
         }
 
-        public async Task EditItemCountAsync(ItemCount itemCount)
+        public async Task EditItemCountAsync(string? itemKey, string? itemBatchLotNumber, string? itemExpiry, int? itemQuantity)
         {
             using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
             using (var command = DatabaseHelper.CreateCommand(connection, "edit_item_count",
-                ("_itmkey", itemCount.ItemKey),
-                ("_itmuom", itemCount.ItemUom),
-                ("_itmbnl", itemCount.ItemBatchLotNumber),
-                ("_itmexp", itemCount.ItemExpiry),
-                ("_itmqty", itemCount.ItemQuantity)))
+                ("_itmkey", itemKey ?? ""),
+                ("_itmbnl", itemBatchLotNumber ?? ""),
+                ("_itmexp", itemExpiry ?? ""),
+                ("_itmqty", itemQuantity ?? 0)))
             {
                 await command.ExecuteNonQueryAsync();
             }
         }
 
-        public async Task<IEnumerable<ItemCount>> ShowItemCountAsync(string countCode)
+        public async Task<IEnumerable<ItemCount>> ShowItemCountAsync(string countCode, int sort)
         {
             var itemCounts = new List<ItemCount>();
             using (var connection = await DatabaseHelper.GetOpenConnectionAsync(_connectionStringProvider))
-            using (var command = DatabaseHelper.CreateCommand(connection, "show_item_count", ("_cntcode", countCode)))
+            using (var command = DatabaseHelper.CreateCommand(connection, "show_item_count",
+                ("_cntcode", countCode),
+                ("_sort", sort)))
             using (var reader = await command.ExecuteReaderAsync())
             {
                 while (await reader.ReadAsync())

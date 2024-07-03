@@ -10,7 +10,7 @@ namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+   // [Authorize]
     public class DatabaseController : ControllerBase
     {
         private readonly IConnectionStringProvider _connectionStringProvider;
