@@ -7,7 +7,7 @@ namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ItemCountController : ControllerBase
     {
         private readonly IItemCount _itemCountService;
@@ -16,7 +16,6 @@ namespace WebApplication2.Controllers
         {
             _itemCountService = itemCountService;
         }
-
         [HttpPost("add")]
         public async Task<IActionResult> AddItemCount([FromBody] ItemCount itemCount)
         {
@@ -27,7 +26,7 @@ namespace WebApplication2.Controllers
                 itemCount.ItemUom,
                 itemCount.ItemBatchLotNumber,
                 itemCount.ItemExpiry,
-                itemCount.ItemQuantity);
+                itemCount.ItemQuantity ?? 0);  // Use 0 if ItemQuantity is null
             return Ok();
         }
 
@@ -41,14 +40,18 @@ namespace WebApplication2.Controllers
         [HttpPut("edit")]
         public async Task<IActionResult> EditItemCount([FromBody] ItemCount itemCount)
         {
-            await _itemCountService.EditItemCountAsync(itemCount);
+            await _itemCountService.EditItemCountAsync(
+                itemCount.ItemKey,
+                itemCount.ItemBatchLotNumber,
+                itemCount.ItemExpiry,
+                itemCount.ItemQuantity ?? 0);  // Use 0 if ItemQuantity is null
             return Ok();
         }
 
         [HttpGet("show")]
-        public async Task<IEnumerable<ItemCount>> ShowItemCount(string countCode)
+        public async Task<IEnumerable<ItemCount>> ShowItemCount(string countCode, int sort)
         {
-            return await _itemCountService.ShowItemCountAsync(countCode);
+            return await _itemCountService.ShowItemCountAsync(countCode, sort);
         }
     }
 }

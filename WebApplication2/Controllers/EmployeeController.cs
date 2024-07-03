@@ -6,7 +6,7 @@ namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployee _employeeService;
