@@ -1,12 +1,9 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-using System.IO;
-using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using WebApplication2.Interfaces;
-using System;
 
 namespace WebApplication2.Security
 {

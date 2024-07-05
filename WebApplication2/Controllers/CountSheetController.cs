@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   // [Authorize]  
+   [Authorize]  
     public class CountSheetController : ControllerBase
     {
         private readonly ICountSheet _countSheetService;

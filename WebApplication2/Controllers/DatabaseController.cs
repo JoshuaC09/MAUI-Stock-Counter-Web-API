@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Net;
-using System.Threading.Tasks;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
 
@@ -10,7 +8,7 @@ namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   // [Authorize]
+    [Authorize]
     public class DatabaseController : ControllerBase
     {
         private readonly IConnectionStringProvider _connectionStringProvider;
@@ -33,7 +31,7 @@ namespace WebApplication2.Controllers
             }
 
             string decodedConnectionString = WebUtility.UrlDecode(model.ConnectionString);
-            _logger.LogInformation($"Decoded connection string: {decodedConnectionString}");
+            _logger.LogInformation("Decoded connection string: {DecodedConnectionString}", decodedConnectionString);
 
             string decryptedConnectionString;
             try
@@ -46,7 +44,7 @@ namespace WebApplication2.Controllers
                 return BadRequest("Invalid connection string.");
             }
 
-            _logger.LogInformation($"Decrypted connection string: {decryptedConnectionString}");
+            _logger.LogInformation("Decrypted connection string: {DecryptedConnectionString}", decryptedConnectionString);
 
             string coreConnectionString = string.Empty;
             string remoteDatabase = string.Empty;
@@ -67,8 +65,8 @@ namespace WebApplication2.Controllers
                 }
             }
 
-            _logger.LogInformation($"Core connection string: {coreConnectionString}");
-            _logger.LogInformation($"Remote database: {remoteDatabase}");
+            _logger.LogInformation("Core connection string: {CoreConnectionString}", coreConnectionString);
+            _logger.LogInformation("Remote database: {RemoteDatabase}", remoteDatabase);
 
             await _connectionStringProvider.SetConnectionStringAsync(coreConnectionString, remoteDatabase);
             return Ok("Connection string set successfully.");
