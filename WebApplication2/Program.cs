@@ -77,7 +77,7 @@ builder.Services.AddScoped<MyDbContext>(provider =>
     return dbContextFactory.CreateDbContext(connectionString);
 });
 
-// Add JWT authentication configuration
+
 var jwtKey = builder.Configuration["Jwt:Key"];
 if (string.IsNullOrEmpty(jwtKey))
 {
@@ -101,7 +101,6 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Add authorization policy
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("ApiUser", policy => policy.RequireAuthenticatedUser());
@@ -127,7 +126,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthentication(); // Ensure this is before UseAuthorization
+app.UseAuthentication(); 
 app.UseAuthorization();
 
 app.MapControllers();

@@ -7,7 +7,7 @@ namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class ItemCountController : ControllerBase
     {
         private readonly IItemCount _itemCountService;

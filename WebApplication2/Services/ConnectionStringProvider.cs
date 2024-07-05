@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using WebApplication2.Interfaces;
+﻿using WebApplication2.Interfaces;
 
 namespace WebApplication2.Services
 {
