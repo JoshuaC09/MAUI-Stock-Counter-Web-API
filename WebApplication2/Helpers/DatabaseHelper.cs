@@ -12,7 +12,7 @@ namespace WebApplication2.Helpers
             var connection = new MySqlConnection(connectionString);
             await connection.OpenAsync();
             return connection;
-        }   
+        }
 
         public static MySqlCommand CreateCommand(MySqlConnection connection, string storedProcedure, params (string, object)[] parameters)
         {
@@ -25,6 +25,21 @@ namespace WebApplication2.Helpers
                 command.Parameters.AddWithValue(parameter.Item1, parameter.Item2);
             }
             return command;
+        }
+
+        public static async Task<bool> TestConnectionAsync(string connectionString)
+        {
+            try
+            {
+                using var connection = new MySqlConnection(connectionString);
+                await connection.OpenAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+              
+                return false;
+            }
         }
     }
 }

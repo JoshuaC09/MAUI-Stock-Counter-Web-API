@@ -19,7 +19,7 @@ namespace WebApplication2.Security
         public byte[] DeriveKeyFromPassword(string ConnString, byte[] salt)
         {
             var iterations = 1000;
-            var desiredKeyLength = 32; // 256 bits
+            var desiredKeyLength = 32;
             var hashMethod = HashAlgorithmName.SHA256;
 
             using (var deriveBytes = new Rfc2898DeriveBytes(Encoding.UTF8.GetBytes(ConnString), salt, iterations, hashMethod))

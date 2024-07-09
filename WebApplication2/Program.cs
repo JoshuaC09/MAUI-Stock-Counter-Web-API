@@ -7,6 +7,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using WebApplication2.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,9 +45,10 @@ builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSingleton<MyDbContextFactory>();
 builder.Services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
 
+
 var encryptionSettings = builder.Configuration.GetSection("EncryptionSettings");
-var encryptionKey = encryptionSettings.GetValue<string>("Key");
-var saltString = encryptionSettings.GetValue<string>("Salt");
+var encryptionKey =AppSettingSecurity.EncryptionKey;
+var saltString = AppSettingSecurity.EncryptionSalt;
 
 if (encryptionKey == null)
 {
@@ -78,7 +80,7 @@ builder.Services.AddScoped<MyDbContext>(provider =>
 });
 
 
-var jwtKey = builder.Configuration["Jwt:Key"];
+var jwtKey = builder.Configuration["Jwt:Key"] ;
 if (string.IsNullOrEmpty(jwtKey))
 {
     throw new ArgumentNullException(nameof(jwtKey), "JWT key must not be null.");

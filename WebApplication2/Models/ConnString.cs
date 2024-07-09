@@ -3,5 +3,6 @@
     public class ConnString
     {
         public string? ConnectionString { get; set; }
+        public string? RemoteDatabase { get; set; }
     }
 }
