@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using WebApplication2.Interfaces;
+using WebApplication2.Helpers;
 using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
@@ -33,18 +34,7 @@ namespace WebApplication2.Controllers
             string decodedConnectionString = WebUtility.UrlDecode(model.ConnectionString);
             _logger.LogInformation("Decoded connection string: {DecodedConnectionString}", decodedConnectionString);
 
-            string decryptedConnectionString;
-            try
-            {
-                decryptedConnectionString = await _securityService.DecryptAsync(decodedConnectionString);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error decrypting connection string.");
-                return BadRequest("Invalid connection string.");
-            }
-
-            _logger.LogInformation("Decrypted connection string: {DecryptedConnectionString}", decryptedConnectionString);
+            string decryptedConnectionString = decodedConnectionString;
 
             string coreConnectionString = string.Empty;
             string remoteDatabase = string.Empty;
@@ -67,6 +57,12 @@ namespace WebApplication2.Controllers
 
             _logger.LogInformation("Core connection string: {CoreConnectionString}", coreConnectionString);
             _logger.LogInformation("Remote database: {RemoteDatabase}", remoteDatabase);
+
+            bool connectionSuccessful = await DatabaseHelper.TestConnectionAsync(coreConnectionString);
+            if (!connectionSuccessful)
+            {
+                return BadRequest("Unable to establish a connection to the database.");
+            }
 
             await _connectionStringProvider.SetConnectionStringAsync(coreConnectionString, remoteDatabase);
             return Ok("Connection string set successfully.");
