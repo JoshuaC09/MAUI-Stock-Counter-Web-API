@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Interfaces;
+using WebApplication2.Models;
+using WebApplication2.Helpers;
 
 namespace WebApplication2.Controllers
 {
@@ -7,21 +9,34 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
         private readonly ISecurity _securityService;
+        private readonly IConnectionStringProvider _connectionStringProvider;
+        private readonly string _jwtKey;
 
-        public TokenController(IConfiguration configuration, ISecurity securityService)
+        public TokenController(ISecurity securityService, IConnectionStringProvider connectionStringProvider, AppSettingSecurity appSettingSecurity)
         {
-            _configuration = configuration;
             _securityService = securityService;
+            _connectionStringProvider = connectionStringProvider;
+            _jwtKey = appSettingSecurity.DecryptedJwtKey;
         }
 
         [HttpPost("generate")]
-        public IActionResult GenerateToken()
+        public async Task<IActionResult> GenerateToken()
         {
-            var key = _configuration["Jwt:Key"];
-            var tokenString = _securityService.GenerateWebToken(key, "Stock_Counter");
+            var connectionString = await _connectionStringProvider.GetConnectionStringAsync();
 
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                return BadRequest("Connection string has not been set. Please set a valid connection string first.");
+            }
+
+     
+            bool connectionSuccessful = await DatabaseHelper.TestConnectionAsync(connectionString);
+            if (!connectionSuccessful)
+            {
+                return BadRequest("Unable to establish a connection to the database. Please check your connection string.");
+            }
+            var tokenString = _securityService.GenerateWebToken(_jwtKey, "Stock_Counter", 300);
             return Ok(new { Token = tokenString });
         }
     }
