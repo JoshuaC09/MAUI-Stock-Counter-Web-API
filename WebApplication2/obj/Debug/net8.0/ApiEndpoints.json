@@ -151,6 +151,36 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "InventoryController",
+    "Method": "ExportInventory",
+    "RelativePath": "api/Inventory/export",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventoryController",
+    "Method": "InitInventory",
+    "RelativePath": "api/Inventory/init",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventoryController",
+    "Method": "PostInventory",
+    "RelativePath": "api/Inventory/post",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApplication2.Controllers.ItemController",
     "Method": "GetItemsAsync",
     "RelativePath": "api/Item/GetItems",

@@ -9,7 +9,6 @@ namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class DatabaseController : ControllerBase
     {
         private readonly IConnectionStringProvider _connectionStringProvider;
@@ -45,7 +44,7 @@ namespace WebApplication2.Controllers
                 {
                     remoteDatabase = part.Substring("RemoteDatabase=".Length);
                 }
-                else
+                else if (!part.StartsWith("PortNumber=", StringComparison.OrdinalIgnoreCase))
                 {
                     if (!string.IsNullOrEmpty(coreConnectionString))
                     {
@@ -68,12 +67,14 @@ namespace WebApplication2.Controllers
             return Ok("Connection string set successfully.");
         }
 
+        [Authorize]
         [HttpGet("GetConnectionString")]
         public async Task<string> GetConnectionStringAsync()
         {
             return await _connectionStringProvider.GetConnectionStringAsync();
         }
 
+        [Authorize]
         [HttpGet("GetRemoteDatabase")]
         public async Task<string> GetRemoteDatabaseAsync()
         {

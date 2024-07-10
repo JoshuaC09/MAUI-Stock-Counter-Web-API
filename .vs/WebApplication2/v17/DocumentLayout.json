@@ -3,68 +3,116 @@
   "WorkspaceRootPath": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\helpers\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\helpers\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\security\\securityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\security\\securityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\itemcountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\itemcountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\countsheetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\countsheetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\connectionstringprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\connectionstringprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\countsheetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\countsheetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\models\\appsettingsecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\appsettingsecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\models\\itemcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\itemcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\tokencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\tokencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\itemcountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\itemcountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\countsheetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\countsheetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\security\\securityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\security\\securityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\connectionstringprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\connectionstringprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\interfaces\\isecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\interfaces\\isecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\interfaces\\iitemcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\interfaces\\iitemcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\interfaces\\iconnectionstringprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\interfaces\\iconnectionstringprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\countsheetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\countsheetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\models\\itemcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\itemcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\models\\exporteditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\exporteditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\interfaces\\icountsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\interfaces\\icountsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\interfaces\\iemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\interfaces\\iemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\interfaces\\iitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\interfaces\\iitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\interfaces\\iinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\interfaces\\iinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\itemcountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\itemcountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\models\\appsettingsecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\appsettingsecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\webapplication2.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\webapplication2.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\helpers\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\helpers\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\models\\connstring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -81,36 +129,136 @@
     {
       "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\dbcontext\\mydesigntimedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\dbcontext\\mydesigntimedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|d:\\canapi_joshua_intern_pupsmb\\maui stock counter web api github\\maui-stock-counter-web-api\\webapplication2\\webapplication2.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{80A028DC-D102-4C45-8A92-2888CCFE88BD}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\webapplication2.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 19,
+          "DockedHeight": 200,
+          "SelectedChildIndex": 31,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 17,
+              "Title": "ExportedItem.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Models\\ExportedItem.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\ExportedItem.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Models\\ExportedItem.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\ExportedItem.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T02:59:26.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IItemCount.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IItemCount.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Interfaces\\IItemCount.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IItemCount.cs",
+              "RelativeToolTip": "WebApplication2\\Interfaces\\IItemCount.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T05:22:08.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IItem.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IItem.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Interfaces\\IItem.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IItem.cs",
+              "RelativeToolTip": "WebApplication2\\Interfaces\\IItem.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T05:21:23.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IEmployee.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IEmployee.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Interfaces\\IEmployee.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IEmployee.cs",
+              "RelativeToolTip": "WebApplication2\\Interfaces\\IEmployee.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T05:19:22.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Controllers\\InventoryController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\InventoryController.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Controllers\\InventoryController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\InventoryController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T05:16:41.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "InventoryService.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\InventoryService.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Services\\InventoryService.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\InventoryService.cs",
+              "RelativeToolTip": "WebApplication2\\Services\\InventoryService.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T05:15:46.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IInventory.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IInventory.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Interfaces\\IInventory.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IInventory.cs",
+              "RelativeToolTip": "WebApplication2\\Interfaces\\IInventory.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T05:15:20.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ICountSheet.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\ICountSheet.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Interfaces\\ICountSheet.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\ICountSheet.cs",
+              "RelativeToolTip": "WebApplication2\\Interfaces\\ICountSheet.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T04:28:20.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IConnectionStringProvider.cs",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IConnectionStringProvider.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Interfaces\\IConnectionStringProvider.cs",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\IConnectionStringProvider.cs",
+              "RelativeToolTip": "WebApplication2\\Interfaces\\IConnectionStringProvider.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T04:28:19.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication2\\appsettings.json",
+              "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\appsettings.json",
+              "RelativeToolTip": "WebApplication2\\appsettings.json",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-09T03:30:13.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "ItemCountService.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\ItemCountService.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Services\\ItemCountService.cs",
@@ -122,19 +270,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 27,
               "Title": "EmployeeService.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\EmployeeService.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Services\\EmployeeService.cs",
               "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\EmployeeService.cs",
               "RelativeToolTip": "WebApplication2\\Services\\EmployeeService.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T08:39:30.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T08:39:30.251Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "CountSheetService.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\CountSheetService.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Services\\CountSheetService.cs",
@@ -157,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "ItemController.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Controllers\\ItemController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\ItemController.cs",
@@ -169,18 +316,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 3,
               "Title": "ItemCountController.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Controllers\\ItemCountController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\ItemCountController.cs",
               "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Controllers\\ItemCountController.cs",
               "RelativeToolTip": "WebApplication2\\Controllers\\ItemCountController.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T04:02:16.073Z"
+              "WhenOpened": "2024-07-08T04:02:16.073Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
               "Title": "TokenController.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Controllers\\TokenController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\TokenController.cs",
@@ -192,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 29,
               "Title": "CountSheet.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Models\\CountSheet.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Models\\CountSheet.cs",
@@ -203,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 28,
               "Title": "ConnString.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Models\\ConnString.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Models\\ConnString.cs",
@@ -214,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "ItemCount.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Models\\ItemCount.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Models\\ItemCount.cs",
@@ -225,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 11,
               "Title": "ISecurity.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Interfaces\\ISecurity.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Interfaces\\ISecurity.cs",
@@ -236,19 +384,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
               "Title": "ItemService.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\ItemService.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Services\\ItemService.cs",
               "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\ItemService.cs",
               "RelativeToolTip": "WebApplication2\\Services\\ItemService.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T03:28:18.276Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T03:28:18.276Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ConnectionStringProvider.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Services\\ConnectionStringProvider.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Services\\ConnectionStringProvider.cs",
@@ -259,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "SecurityService.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Security\\SecurityService.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Security\\SecurityService.cs",
@@ -271,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 30,
               "Title": "MyDbContextFactory.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\DbContext\\MyDbContextFactory.cs",
               "RelativeDocumentMoniker": "WebApplication2\\DbContext\\MyDbContextFactory.cs",
@@ -282,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 31,
               "Title": "MyDesignTimeDbContextFactory.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\DbContext\\MyDesignTimeDbContextFactory.cs",
               "RelativeDocumentMoniker": "WebApplication2\\DbContext\\MyDesignTimeDbContextFactory.cs",
@@ -293,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "AppSettingSecurity.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Models\\AppSettingSecurity.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Models\\AppSettingSecurity.cs",
@@ -304,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 26,
               "Title": "DatabaseHelper.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Helpers\\DatabaseHelper.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Helpers\\DatabaseHelper.cs",
@@ -316,18 +463,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Program.cs",
               "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Program.cs",
               "RelativeToolTip": "WebApplication2\\Program.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T03:25:53.577Z"
+              "WhenOpened": "2024-07-08T03:25:53.577Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "WebApplication2.http",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\WebApplication2.http",
               "RelativeDocumentMoniker": "WebApplication2\\WebApplication2.http",
@@ -338,14 +486,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "DatabaseController.cs",
               "DocumentMoniker": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Controllers\\DatabaseController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\DatabaseController.cs",
               "ToolTip": "D:\\Canapi_Joshua_Intern_PUPSMB\\MAUI Stock Counter Web API Github\\MAUI-Stock-Counter-Web-API\\WebApplication2\\Controllers\\DatabaseController.cs",
               "RelativeToolTip": "WebApplication2\\Controllers\\DatabaseController.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T03:23:24.354Z"
+              "WhenOpened": "2024-07-08T03:23:24.354Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -358,6 +507,16 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T03:23:23.432Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 85,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }
