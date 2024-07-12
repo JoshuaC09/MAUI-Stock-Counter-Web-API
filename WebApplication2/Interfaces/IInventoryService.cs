@@ -2,7 +2,7 @@
 
 namespace WebApplication2.Interfaces
 {
-    public interface IInventory
+    public interface IInventoryService
     {
         Task InitInventoryAsync();
         Task PostInventoryAsync();

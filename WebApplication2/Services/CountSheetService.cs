@@ -4,11 +4,11 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Services
 {
-    public class CountSheetService : ICountSheet
+    public class CountSheetService : ICountSheetService
     {
-        private readonly IConnectionStringProvider _connectionStringProvider;
+        private readonly IConnectionStringProviderService _connectionStringProvider;
 
-        public CountSheetService(IConnectionStringProvider connectionStringProvider)
+        public CountSheetService(IConnectionStringProviderService connectionStringProvider)
         {
             _connectionStringProvider = connectionStringProvider;
         }

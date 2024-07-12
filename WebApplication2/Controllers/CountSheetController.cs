@@ -10,10 +10,10 @@ namespace WebApplication2.Controllers
     [Authorize]  
     public class CountSheetController : ControllerBase
     {
-        private readonly ICountSheet _countSheetService;
+        private readonly ICountSheetService _countSheetService;
 
 
-        public CountSheetController(ICountSheet countSheetService)
+        public CountSheetController(ICountSheetService countSheetService)
         {
             _countSheetService = countSheetService;
         }

@@ -4,11 +4,11 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Services
 {
-    public class EmployeeService : IEmployee
+    public class EmployeeService : IEmployeeService
     {
-        private readonly IConnectionStringProvider _connectionStringProvider;
+        private readonly IConnectionStringProviderService _connectionStringProvider;
 
-        public EmployeeService(IConnectionStringProvider connectionStringProvider)
+        public EmployeeService(IConnectionStringProviderService connectionStringProvider)
         {
             _connectionStringProvider = connectionStringProvider;
         }

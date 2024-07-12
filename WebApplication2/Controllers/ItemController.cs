@@ -9,9 +9,9 @@ namespace WebApplication2.Controllers
     [Authorize]
     public class ItemController : ControllerBase
     {
-        private readonly IItem _itemService;
+        private readonly IItemService _itemService;
 
-        public ItemController(IItem itemService)
+        public ItemController(IItemService itemService)
         {
             _itemService = itemService;
         }

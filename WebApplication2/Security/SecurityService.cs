@@ -7,7 +7,7 @@ using WebApplication2.Interfaces;
 
 namespace WebApplication2.Security
 {
-    public class SecurityService : ISecurity
+    public class SecurityService : ISecurityService
     {
         private readonly byte[] _key;
 

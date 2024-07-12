@@ -1,6 +1,6 @@
 ﻿namespace WebApplication2.Interfaces
 {
-    public interface ISecurity
+    public interface ISecurityService
     {
         byte[] DeriveKeyFromPassword(string ConnString, byte[] salt);
         Task<string> DecryptAsync(string cipherText);

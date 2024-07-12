@@ -26,7 +26,7 @@ namespace WebApplication2.Controllers
                 itemCount.ItemUom,
                 itemCount.ItemBatchLotNumber,
                 itemCount.ItemExpiry,
-                itemCount.ItemQuantity ?? 0);  // Use 0 if ItemQuantity is null
+                itemCount.ItemQuantity ?? 0);  
             return Ok();
         }
 
@@ -44,7 +44,7 @@ namespace WebApplication2.Controllers
                 itemCount.ItemKey,
                 itemCount.ItemBatchLotNumber,
                 itemCount.ItemExpiry,
-                itemCount.ItemQuantity ?? 0);  // Use 0 if ItemQuantity is null
+                itemCount.ItemQuantity ?? 0); 
             return Ok();
         }
 
