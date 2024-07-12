@@ -2,11 +2,11 @@
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
 
-public class InventoryService : IInventory
+public class InventoryService : IInventoryService
 {
-    private readonly IConnectionStringProvider _connectionStringProvider;
+    private readonly IConnectionStringProviderService _connectionStringProvider;
 
-    public InventoryService(IConnectionStringProvider connectionStringProvider)
+    public InventoryService(IConnectionStringProviderService connectionStringProvider)
     {
         _connectionStringProvider = connectionStringProvider;
     }

@@ -6,7 +6,7 @@ namespace WebApplication2.Helpers
 {
     public static class DatabaseHelper
     {
-        public static async Task<MySqlConnection> GetOpenConnectionAsync(IConnectionStringProvider connectionStringProvider)
+        public static async Task<MySqlConnection> GetOpenConnectionAsync(IConnectionStringProviderService connectionStringProvider)
         {
             var connectionString = await connectionStringProvider.GetConnectionStringAsync();
             var connection = new MySqlConnection(connectionString);

@@ -4,6 +4,8 @@ using System.Net;
 using WebApplication2.Interfaces;
 using WebApplication2.Helpers;
 using WebApplication2.Models;
+using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace WebApplication2.Controllers
 {
@@ -11,11 +13,11 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class DatabaseController : ControllerBase
     {
-        private readonly IConnectionStringProvider _connectionStringProvider;
-        private readonly ISecurity _securityService;
+        private readonly IConnectionStringProviderService _connectionStringProvider;
+        private readonly ISecurityService _securityService;
         private readonly ILogger<DatabaseController> _logger;
 
-        public DatabaseController(IConnectionStringProvider connectionStringProvider, ISecurity securityService, ILogger<DatabaseController> logger)
+        public DatabaseController(IConnectionStringProviderService connectionStringProvider, ISecurityService securityService, ILogger<DatabaseController> logger)
         {
             _connectionStringProvider = connectionStringProvider;
             _securityService = securityService;
@@ -35,24 +37,7 @@ namespace WebApplication2.Controllers
 
             string decryptedConnectionString = decodedConnectionString;
 
-            string coreConnectionString = string.Empty;
-            string remoteDatabase = string.Empty;
-
-            foreach (var part in decryptedConnectionString.Split(';'))
-            {
-                if (part.StartsWith("RemoteDatabase=", StringComparison.OrdinalIgnoreCase))
-                {
-                    remoteDatabase = part.Substring("RemoteDatabase=".Length);
-                }
-                else if (!part.StartsWith("PortNumber=", StringComparison.OrdinalIgnoreCase))
-                {
-                    if (!string.IsNullOrEmpty(coreConnectionString))
-                    {
-                        coreConnectionString += ";";
-                    }
-                    coreConnectionString += part;
-                }
-            }
+            var (coreConnectionString, remoteDatabase) = _connectionStringProvider.ExtractConnectionString(decryptedConnectionString);
 
             _logger.LogInformation("Core connection string: {CoreConnectionString}", coreConnectionString);
             _logger.LogInformation("Remote database: {RemoteDatabase}", remoteDatabase);

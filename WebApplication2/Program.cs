@@ -42,7 +42,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSingleton<MyDbContextFactory>();
-builder.Services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
+builder.Services.AddSingleton<IConnectionStringProviderService, ConnectionStringProviderService>();
 
 var encryptionSettings = builder.Configuration.GetSection("EncryptionSettings");
 var encryptionKey = AppSettingSecurity.EncryptionKey;
@@ -59,17 +59,17 @@ if (saltString == null)
 }
 
 var salt = Encoding.UTF8.GetBytes(saltString);
-builder.Services.AddSingleton<ISecurity>(new SecurityService(encryptionKey, salt));
+builder.Services.AddSingleton<ISecurityService>(new SecurityService(encryptionKey, salt));
 
-builder.Services.AddScoped<ICountSheet, CountSheetService>();
+builder.Services.AddScoped<ICountSheetService, CountSheetService>();
 builder.Services.AddScoped<IItemCount, ItemCountService>();
-builder.Services.AddScoped<IEmployee, EmployeeService>();
-builder.Services.AddScoped<IItem, ItemService>();
-builder.Services.AddScoped<IInventory, InventoryService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IItemService, ItemService>();
+builder.Services.AddScoped<IInventoryService, InventoryService>();
 
 builder.Services.AddScoped<MyDbContext>(provider =>
 {
-    var connectionStringProvider = provider.GetRequiredService<IConnectionStringProvider>();
+    var connectionStringProvider = provider.GetRequiredService<IConnectionStringProviderService>();
     var dbContextFactory = provider.GetRequiredService<MyDbContextFactory>();
     var connectionStringTask = connectionStringProvider.GetConnectionStringAsync();
     connectionStringTask.Wait();
@@ -79,7 +79,7 @@ builder.Services.AddScoped<MyDbContext>(provider =>
 });
 
 var serviceProvider = builder.Services.BuildServiceProvider();
-var securityService = serviceProvider.GetRequiredService<ISecurity>();
+var securityService = serviceProvider.GetRequiredService<ISecurityService>();
 
 var encryptedJwtKey = builder.Configuration["JwtSecretKey:Key"];
 if (string.IsNullOrEmpty(encryptedJwtKey))

@@ -9,11 +9,11 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
-        private readonly ISecurity _securityService;
-        private readonly IConnectionStringProvider _connectionStringProvider;
+        private readonly ISecurityService _securityService;
+        private readonly IConnectionStringProviderService _connectionStringProvider;
         private readonly string _jwtKey;
 
-        public TokenController(ISecurity securityService, IConnectionStringProvider connectionStringProvider, AppSettingSecurity appSettingSecurity)
+        public TokenController(ISecurityService securityService, IConnectionStringProviderService connectionStringProvider, AppSettingSecurity appSettingSecurity)
         {
             _securityService = securityService;
             _connectionStringProvider = connectionStringProvider;

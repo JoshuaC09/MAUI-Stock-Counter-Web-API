@@ -9,9 +9,9 @@ namespace WebApplication2.Controllers
     [Authorize]
     public class EmployeeController : ControllerBase
     {
-        private readonly IEmployee _employeeService;
+        private readonly IEmployeeService _employeeService;
 
-        public EmployeeController(IEmployee employeeService)
+        public EmployeeController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
         }

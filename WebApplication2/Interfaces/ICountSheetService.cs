@@ -2,7 +2,7 @@
 
 namespace WebApplication2.Interfaces
 {
-    public interface ICountSheet
+    public interface ICountSheetService
     {
         Task AddCountSheetAsync(string employeeCode, string description, DateTime date);
         Task DeleteCountSheetAsync(string countCode);

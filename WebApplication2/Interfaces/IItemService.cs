@@ -2,7 +2,7 @@
 
 namespace WebApplication2.Interfaces
 {
-    public interface IItem
+    public interface IItemService
     {
         Task<IEnumerable<Item>> GetItemsAsync(string databaseName, string? pattern);
     }

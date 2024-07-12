@@ -2,7 +2,7 @@
 
 namespace WebApplication2.Interfaces
 {
-    public interface IEmployee
+    public interface IEmployeeService
     {
         Task<IEnumerable<Employee>> GetEmployeesAsync(string databaseName, string pattern);
     }

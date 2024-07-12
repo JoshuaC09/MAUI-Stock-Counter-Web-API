@@ -7,9 +7,9 @@ using WebApplication2.Interfaces;
 [Authorize]
 public class InventoryController : ControllerBase
 {
-    private readonly IInventory _inventoryService;
+    private readonly IInventoryService _inventoryService;
 
-    public InventoryController(IInventory inventoryService)
+    public InventoryController(IInventoryService inventoryService)
     {
         _inventoryService = inventoryService;
     }

@@ -6,9 +6,9 @@ namespace WebApplication2.Services
 {
     public class ItemCountService : IItemCount
     {
-        private readonly IConnectionStringProvider _connectionStringProvider;
+        private readonly IConnectionStringProviderService _connectionStringProvider;
 
-        public ItemCountService(IConnectionStringProvider connectionStringProvider)
+        public ItemCountService(IConnectionStringProviderService connectionStringProvider)
         {
             _connectionStringProvider = connectionStringProvider;
         }
